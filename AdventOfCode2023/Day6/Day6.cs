@@ -92,9 +92,6 @@ namespace AdventOfCode2023.Day6
             if (travelTime < 0) return 0;
 
             return travelTime * holdingTime;
-        }
-
-
-        
+        }        
     }
 }
