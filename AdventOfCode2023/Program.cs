@@ -6,6 +6,8 @@ using AdventOfCode2023.Day4;
 using AdventOfCode2023.Day5;
 using AdventOfCode2023.Day6;
 using AdventOfCode2023.Day7;
+using AdventOfCode2023.Day8;
+using AdventOfCode2023.Day9;
 
-var result = Day7.Part2();
+var result = Day9.Part2();
 Console.WriteLine(result);
