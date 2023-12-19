@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace AdventOfCode2023.Day5
+namespace AdventOfCode2023
 {
     public class Day5
     {
@@ -31,7 +31,7 @@ namespace AdventOfCode2023.Day5
             var light2temperature = ParseMap(input, "light-to-temperature");
             var temperature2humidity = ParseMap(input, "temperature-to-humidity");
             var humidity2location = ParseMap(input, "humidity-to-location");
-                        
+
             var lowestLocation = seeds
                 .Select(v => Seed2Location(v))
                 .Min();
@@ -112,7 +112,7 @@ namespace AdventOfCode2023.Day5
                 v = Source2Destination(temperature2humidity, v);
                 v = Source2Destination(humidity2location, v);
                 return v;
-            }   
+            }
         }
 
         static uint[] ParseSeedds_Part1(string input)

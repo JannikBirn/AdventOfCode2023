@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace AdventOfCode2023.Day2
+namespace AdventOfCode2023
 {
     public static class Day2
     {
@@ -43,7 +43,7 @@ namespace AdventOfCode2023.Day2
                     {
                         summedGameIds += currentGameId;
                     }
-                    
+
                     i += GamePrefix.Length;
                     isCurrentGameValid = true;
                     isParsingGameId = true;
@@ -58,7 +58,7 @@ namespace AdventOfCode2023.Day2
 
                 if (isParsingGameId)
                 {
-                    var gameIdNumber = (int)character - 48;
+                    var gameIdNumber = character - 48;
 
                     if (gameIdNumber < 0 || gameIdNumber > 9)
                     {
@@ -79,7 +79,7 @@ namespace AdventOfCode2023.Day2
 
                     currentSetRed = 0;
                     currentSetGreen = 0;
-                    currentSetBlue = 0;                  
+                    currentSetBlue = 0;
 
                     //todo check if we have more nen max cubes and set game invalid
                     continue;
@@ -93,7 +93,7 @@ namespace AdventOfCode2023.Day2
                 for (int j = i; j < input.Length; j++)
                 {
                     var cubeNumberChar = input[j];
-                    var cubeNumber = (int)cubeNumberChar - 48;
+                    var cubeNumber = cubeNumberChar - 48;
                     if (cubeNumber < 0 || cubeNumber > 9)
                     {
                         numberLength = j - i;
@@ -119,11 +119,11 @@ namespace AdventOfCode2023.Day2
                         currentSetBlue = currentCubeNumber;
                         i += numberLength + Blue.Length;
                         break;
-                    default: 
+                    default:
                         throw new ArgumentOutOfRangeException(nameof(colorChar), null, colorChar.ToString());
                 }
-            }   
-            
+            }
+
             sw.Stop();
             Console.WriteLine(sw.Elapsed.ToString());
 
@@ -165,7 +165,7 @@ namespace AdventOfCode2023.Day2
                 for (int j = i; j < input.Length; j++)
                 {
                     var cubeNumberChar = input[j];
-                    var cubeNumber = (int)cubeNumberChar - 48;
+                    var cubeNumber = cubeNumberChar - 48;
                     if (cubeNumber < 0 || cubeNumber > 9)
                     {
                         numberLength = j - i;

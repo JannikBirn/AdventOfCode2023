@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Numerics;
 
-namespace AdventOfCode2023.Day8
+namespace AdventOfCode2023
 {
     public static class Day8
     {
@@ -46,7 +46,7 @@ namespace AdventOfCode2023.Day8
             var instructions = ParseInstructions(input);
             var network = ParseNetwork(input);
 
-            var startNodes = network.Keys.Where(v => v[^1] == 'A').ToArray();            
+            var startNodes = network.Keys.Where(v => v[^1] == 'A').ToArray();
 
             var node2LoopCount = new Dictionary<string, HashSet<int>>();
 
@@ -58,7 +58,7 @@ namespace AdventOfCode2023.Day8
                 var index2EndNodeCount = new Dictionary<string, HashSet<int>>();
 
                 while (true)
-                {                    
+                {
                     var instruction = instructions[instructionIndex % instructions.Length];
 
                     currentNode = instruction switch
@@ -100,7 +100,7 @@ namespace AdventOfCode2023.Day8
             });
 
             var smallestLoops = node2LoopCount.Values.Select(v => v.Min()).ToArray();
-            var lcm = GetLcm(smallestLoops);            
+            var lcm = GetLcm(smallestLoops);
 
             sw.Stop();
             Console.WriteLine(sw.Elapsed.ToString());
@@ -117,8 +117,8 @@ namespace AdventOfCode2023.Day8
         {
             var network = new Dictionary<string, (string, string)>();
             foreach (var item in input.Split('\n', StringSplitOptions.RemoveEmptyEntries).Skip(1))
-            {                
-                var values = item.Split(new[] {'=', ' ', '(', ',', ')' }, StringSplitOptions.RemoveEmptyEntries);
+            {
+                var values = item.Split(new[] { '=', ' ', '(', ',', ')' }, StringSplitOptions.RemoveEmptyEntries);
                 network.Add(values[0], (values[1], values[2]));
             }
 
@@ -147,7 +147,7 @@ namespace AdventOfCode2023.Day8
 
                 primeDivisors.Add(lowestPrimeDivisor);
             }
-            
+
             var lcm = new BigInteger(1);
 
             foreach (var primeDivisor in primeDivisors) lcm *= primeDivisor;
@@ -161,7 +161,7 @@ namespace AdventOfCode2023.Day8
             {
                 return 2; // 2 is the first prime number
             }
-                        
+
             int number = prime;
             if (number % 2 == 0) number++;
             else number += 2;

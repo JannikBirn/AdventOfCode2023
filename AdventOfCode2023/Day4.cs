@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 
-namespace AdventOfCode2023.Day4
+namespace AdventOfCode2023
 {
     public class Day4
     {

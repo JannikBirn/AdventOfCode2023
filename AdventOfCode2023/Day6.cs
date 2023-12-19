@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventOfCode2023.Day6
+﻿namespace AdventOfCode2023
 {
     public static class Day6
     {
@@ -92,6 +86,6 @@ namespace AdventOfCode2023.Day6
             if (travelTime < 0) return 0;
 
             return travelTime * holdingTime;
-        }        
+        }
     }
 }

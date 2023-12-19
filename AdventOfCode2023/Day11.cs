@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace AdventOfCode2023.Day11
+namespace AdventOfCode2023
 {
     public static class Day11
     {

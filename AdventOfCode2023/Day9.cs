@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace AdventOfCode2023.Day9
+namespace AdventOfCode2023
 {
     public static class Day9
     {
@@ -15,7 +15,7 @@ namespace AdventOfCode2023.Day9
 
             for (int i = 0; i < data.Length; i++)
             {
-                var current = data[i];                
+                var current = data[i];
                 var prediction = current[^1];
 
                 while (current.Any(v => v != 0))
@@ -23,7 +23,7 @@ namespace AdventOfCode2023.Day9
                     var difference = new int[current.Length - 1];
                     for (int j = 0; j < difference.Length; j++)
                     {
-                        difference[j] = current[j + 1] - current[j]; 
+                        difference[j] = current[j + 1] - current[j];
                     }
                     current = difference;
                     prediction += current[^1];
@@ -71,7 +71,7 @@ namespace AdventOfCode2023.Day9
                     else
                     {
                         prediction -= current[0];
-                    }                    
+                    }
                 }
 
                 predictionSum += prediction;

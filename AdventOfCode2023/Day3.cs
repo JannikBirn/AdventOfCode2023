@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 
-namespace AdventOfCode2023.Day3
+namespace AdventOfCode2023
 {
     public static class Day3
     {
@@ -30,7 +25,7 @@ namespace AdventOfCode2023.Day3
 
                 if (charachter == '.' || charachter == '\n') continue;
 
-                var number = (int)charachter - 48;
+                var number = charachter - 48;
 
                 if (number < 0 || number > 9)
                 {
@@ -43,7 +38,7 @@ namespace AdventOfCode2023.Day3
                 for (int j = i + 1; j < input.Length; j++)
                 {
                     var nextChar = input[j];
-                    var nextNumber = (int)nextChar - 48;
+                    var nextNumber = nextChar - 48;
                     if (nextNumber < 0 || nextNumber > 9) break;
 
                     number = number * 10 + nextNumber;
@@ -69,7 +64,7 @@ namespace AdventOfCode2023.Day3
                     {
                         if (y == 0 && x >= number.IndexRange.Start.Value && x <= number.IndexRange.End.Value) continue;
 
-                        var index = x + (y * lineLength);
+                        var index = x + y * lineLength;
                         if (index < 0 || index >= input.Length) continue;
 
                         hasSymbol = symbolIndezies.Contains(index);
@@ -108,7 +103,7 @@ namespace AdventOfCode2023.Day3
                     continue;
                 }
 
-                var number = (int)charachter - 48;
+                var number = charachter - 48;
 
                 if (number < 0 || number > 9) continue;
 
@@ -117,7 +112,7 @@ namespace AdventOfCode2023.Day3
                 for (int j = i + 1; j < input.Length; j++)
                 {
                     var nextChar = input[j];
-                    var nextNumber = (int)nextChar - 48;
+                    var nextNumber = nextChar - 48;
                     if (nextNumber < 0 || nextNumber > 9) break;
 
                     number = number * 10 + nextNumber;
@@ -130,11 +125,11 @@ namespace AdventOfCode2023.Day3
                 {
                     numbers.Add(j, serialNumber);
                 }
-                
+
                 i = lastIndex;
             }
 
-            
+
             var lineLength = input.IndexOf('\n') + 1;
             var sum = 0;
 
@@ -149,11 +144,11 @@ namespace AdventOfCode2023.Day3
                     {
                         if (x == 0 && y == 0) continue;
 
-                        if (!numbers.TryGetValue(gearIndex + x + (y * lineLength), out var serialNumber)) continue;
+                        if (!numbers.TryGetValue(gearIndex + x + y * lineLength, out var serialNumber)) continue;
 
                         if (number1 == serialNumber) continue;
 
-                        if (number1 == null) 
+                        if (number1 == null)
                         {
                             number1 = serialNumber;
                         }

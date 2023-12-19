@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace AdventOfCode2023.Day10
+namespace AdventOfCode2023
 {
     public static class Day10
     {
@@ -224,7 +224,7 @@ namespace AdventOfCode2023.Day10
                 {
                     case Direction.North:
                         SpreadSymbol(currentY, currentX - 1, LeftSymbol);
-                        SpreadSymbol(currentY, currentX + 1, RightSymbol);                      
+                        SpreadSymbol(currentY, currentX + 1, RightSymbol);
                         break;
                     case Direction.East:
                         SpreadSymbol(currentY - 1, currentX, LeftSymbol);
@@ -287,7 +287,7 @@ namespace AdventOfCode2023.Day10
                 Direction.South => Direction.North,
                 Direction.West => Direction.East,
                 Direction.East => Direction.West,
-                _ => throw new NotImplementedException(),                
+                _ => throw new NotImplementedException(),
             };
         }
     }

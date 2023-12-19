@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace AdventOfCode2023.Day7
+namespace AdventOfCode2023
 {
     public static class Day7
     {
@@ -74,7 +74,7 @@ namespace AdventOfCode2023.Day7
                         Kind = KindType.TwoPair;
                     }
                 }
-                else if(helperDictonary.Count == 4)
+                else if (helperDictonary.Count == 4)
                 {
                     Kind = KindType.OnePair;
                 }
@@ -99,8 +99,8 @@ namespace AdventOfCode2023.Day7
                 }
 
                 return 0;
-            }    
-            
+            }
+
             int GetCardPower(char card)
             {
                 return card switch
@@ -138,7 +138,7 @@ namespace AdventOfCode2023.Day7
             sw.Stop();
             Console.WriteLine(sw.Elapsed.ToString());
 
-            return totalWinnings.ToString();            
+            return totalWinnings.ToString();
         }
 
         public static string Part2()
