@@ -1,7 +1,3 @@
-using Google.Apis.Auth.OAuth2;
-using Google.Apis.Util.Store;
-using System.Text;
-
 public static class Utils
 {
     static string CacheDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "AdventOfCode" , "2023");
